@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".screen.GameActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/action_barr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/counter_tv"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_level"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_level_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/sound"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/sound"
+            android:padding="4dp"
+            android:background="?android:selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.61" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.71" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:translationZ="10dp"
+        app:cardBackgroundColor="#1C2747"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/action_barr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/coin_anim"
+                android:layout_width="25dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="coin_animation.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1" />
+
+            <TextView
+                android:id="@+id/coin_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:text="408"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/big_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/container_of_images"
+        app:layout_constraintEnd_toEndOf="@id/container_of_images"
+        app:layout_constraintStart_toStartOf="@id/container_of_images"
+        app:layout_constraintTop_toTopOf="@id/container_of_images"
+        tools:src="@drawable/photo1_1" />
+
+    <LinearLayout
+        android:id="@+id/container_of_images"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_barr">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/oulined_style"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_one"
+                    android:layout_width="164dp"
+                    android:layout_height="164dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/panda4" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/oulined_style">
+
+                <ImageView
+                    android:id="@+id/iv_two"
+                    android:layout_width="164dp"
+                    android:layout_height="164dp"
+
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/board2" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/oulined_style">
+
+                <ImageView
+                    android:id="@+id/iv_three"
+                    android:layout_width="164dp"
+                    android:layout_height="164dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/board4" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/oulined_style">
+
+                <ImageView
+                    android:id="@+id/iv_four"
+                    android:layout_width="164dp"
+                    android:layout_height="164dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/board3" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/first_letter_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toStartOf="@id/clear_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_option_1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_4"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_5"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_6"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_letter_lin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/first_letter_lin"
+            app:layout_constraintStart_toStartOf="@id/first_letter_lin"
+            app:layout_constraintTop_toBottomOf="@id/first_letter_lin">
+
+            <TextView
+                android:id="@+id/tv_option_7"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_8"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_9"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_10"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_11"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_option_12"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_option"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/clear_btn"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/clear_btn_style"
+
+            android:gravity="center"
+            android:src="@drawable/clear_icon"
+            app:layout_constraintBottom_toBottomOf="@id/second_letter_lin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/first_letter_lin"
+            app:layout_constraintTop_toTopOf="@id/first_letter_lin"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/next_screen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.98"
+            android:scaleType="centerCrop"
+            android:src="@drawable/window_bg_correct" />
+
+        <TextView
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="84dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/next_btn_style"
+            android:gravity="center"
+            android:paddingVertical="20dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="1.6"
+            android:text="Next"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/light_anim"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/container_of_answers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/container_of_answers"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="light_anim.json"
+        app:lottie_loop="true"
+        app:lottie_speed="1" />
+
+
+    <LinearLayout
+        android:id="@+id/container_of_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toTopOf="@id/letters"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_of_images">
+
+        <TextView
+            android:id="@+id/tv_answer_1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_3"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_4"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_5"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_6"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_7"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_answer_8"
+            android:layout_width="45dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/shape_card_answer"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ads_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="100dp"
+        android:visibility="gone">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.9"
+            android:background="@color/black" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:translationZ="10dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp">
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/coin_animm"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="coin_animation.json"
+                    app:lottie_loop="true"
+                    app:lottie_speed="1" />
+
+                <TextView
+                    android:id="@+id/coin_count_ads_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="408"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/first_add_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="32dp"
+            android:translationZ="10dp"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_coin">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginVertical="32dp"
+                    android:src="@drawable/stack_coins"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:text="+Ads"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:text="2,07$"
+                    android:textColor="#B44B5CBA"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/lineeesec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="@id/first_add_btn"
+            app:layout_constraintStart_toStartOf="@id/first_add_btn"
+            app:layout_constraintTop_toBottomOf="@id/first_add_btn">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/second_add_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:translationZ="10dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_coin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginVertical="40dp"
+                        android:src="@drawable/stack_coins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="+Ads"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="5,18$"
+                        android:textColor="#B44B5CBA"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/thied_add_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:translationZ="10dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_coin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginVertical="40dp"
+                        android:src="@drawable/stack_coins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="+Ads"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="20,80 $"
+                        android:textColor="#B44B5CBA"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="@id/first_add_btn"
+            app:layout_constraintStart_toStartOf="@id/first_add_btn"
+            app:layout_constraintTop_toBottomOf="@id/lineeesec">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fourth_add_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:translationZ="10dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_coin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginVertical="40dp"
+                        android:src="@drawable/stack_coins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="+Ads"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="41,61 $"
+                        android:textColor="#B44B5CBA"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fifth_add_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:translationZ="10dp"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_coin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginVertical="40dp"
+                        android:src="@drawable/stack_coins"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="+Ads"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="50,64 $"
+                        android:textColor="#B44B5CBA"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

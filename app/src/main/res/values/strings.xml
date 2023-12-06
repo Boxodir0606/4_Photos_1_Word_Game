@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">"4 Rasm 1 so'z o'yini"</string>
+    <string name="app_info">"
+   4 Rasim 1 so'z o'yini  Ilovasi
+*Ushbu dastur Gita dasturchilar akademiyasi talabasi tomonidan yaratilgan. Ushbu ilovadan foydalanib, siz Oddiy o'yin siz to'rtta rasmda Umumiy so'zlarni topishingiz Kerak.Har bir darajada 4 ta rasm, 1 ta so'z, 4 ta fotosurat bilan turli sathlarga ega bo'lganingizda, to'rtta rasm uchun umumiy bo'lgan so'zni topishingiz kerak.
+
+    Framework
+* Android Studiyasi
+• Kotlin
+* Ishlatilgan texnologiyalar:
+• SharedPreferences
+• Lottie animations
+• Vibrator
+"</string>
+</resources>

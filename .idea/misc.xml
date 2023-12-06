@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Rasul/AndroidStudioProjects/4Photos1WordGame/app/src/main/res/drawable-v24/clear_btn_style.xml" value="0.3" />
+        <entry key="..\:/Users/Rasul/AndroidStudioProjects/4Photos1WordGame/app/src/main/res/drawable-v24/correct_answer.xml" value="0.3" />
+        <entry key="..\:/Users/Rasul/AndroidStudioProjects/4Photos1WordGame/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
